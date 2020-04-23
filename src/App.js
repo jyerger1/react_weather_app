@@ -1,26 +1,53 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { Component } from "react";
+// import "moment";
+// import tz from "zipcode-to-timezone";
+import "./App.css";
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+// const API_Key = "98714695d6d6eca2461e95c2aa78b140";
+
+class App extends Component {
+  state = {};
+
+  // getTime = () => {
+
+  // };
+
+  getWeather = async () => {
+    const inputValue = document.getElementById("zipInput").value;
+
+    console.log(inputValue);
+
+    const api_call = await fetch(
+      "https://api.openweathermap.org/data/2.5/weather?zip=" +
+        inputValue +
+        "&units=imperial&appid=98714695d6d6eca2461e95c2aa78b140"
+    );
+    const data = await api_call.json();
+    console.log(data);
+  };
+
+  // RENDER TO THE PAGE
+  render() {
+    return (
+      <div id="form">
+        <h1>Get Weather</h1>
+        <div>
+          <p>
+            <input
+              id="zipInput"
+              type="text"
+              placeholder="Enter Zip Code"
+              name="zip"
+            />
+          </p>
+          <p>
+            <button onClick={this.getWeather}>Click</button>
+          </p>
+          <span></span>
+        </div>
+      </div>
+    );
+  }
 }
 
 export default App;
