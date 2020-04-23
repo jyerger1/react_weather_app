@@ -6,7 +6,14 @@ import "./App.css";
 // const API_Key = "98714695d6d6eca2461e95c2aa78b140";
 
 class App extends Component {
-  state = {};
+  state = {
+    // temperature: undefined,
+    // city: undefined,
+    // country: undefined,
+    // humidity: undefined,
+    // description: undefined,
+    // error: undefined,
+  };
 
   // getTime = () => {
 
@@ -24,6 +31,10 @@ class App extends Component {
     );
     const data = await api_call.json();
     console.log(data);
+
+    this.setState({
+      temperature: data.main.temp,
+    });
   };
 
   // RENDER TO THE PAGE
@@ -43,7 +54,7 @@ class App extends Component {
           <p>
             <button onClick={this.getWeather}>Click</button>
           </p>
-          <span></span>
+          <p>{this.state.temperature}</p>
         </div>
       </div>
     );
