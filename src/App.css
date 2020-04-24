@@ -1,38 +1,20 @@
-.App {
+p {
+  color: blue;
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+h1 {
+  text-align: center;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+body {
+  background-image: url("http://getwallpapers.com/wallpaper/full/8/a/9/1130836-download-free-sad-backgrounds-3840x2160-for-iphone-5.jpg");
+  background-size: auto;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+#form {
+  background: rgba(255, 255, 255, 1);
+  margin-top: 90px;
+  padding-top: 20px;
+  padding-bottom: 35px;
 }
